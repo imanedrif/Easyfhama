@@ -4,62 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
 use Illuminate\Http\Request;
+use Auth;
 
 class EtudiantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function login(Request $request)
     {
-        //
+        $input = $request->all();
+
+        $validation = \Validator::make($input,[
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if ($validation->fails()) {
+            return response()->json(['error' => $validation -> errors()],401);
+        }
+
+        if (Auth::guard('etudiant')->attempt(['email'=> $input['email'],'password' => $input['password']])){
+            $user = Auth::guard('etudiant')->user();
+
+            $token = $user->createToken('MyApp',['etudiant'])->plainTextToken;
+            return response()->json(['user'=> $user,'token' => $token ]);
+
+        }
+        return response()->json(['error' => 'Unauthorised'],401);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function userDetails()
     {
-        //
+        $user = Auth::user();
+        return response()->json(['data' => $user]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Etudiant $etudiant)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Etudiant $etudiant)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Etudiant $etudiant)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Etudiant $etudiant)
-    {
-        //
-    }
 }

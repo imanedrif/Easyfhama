@@ -37,8 +37,20 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'session',
+            'driver' => 'sanctum',
             'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'sanctum',
+            'provider' => 'admins'
+        ],
+        'etudiant' => [
+            'driver' => 'sanctum',
+            'provider' => 'etudiants'
+        ],
+        'prof' => [
+            'driver' => 'sanctum',
+            'provider' => 'profs'
         ],
     ],
 
@@ -63,6 +75,18 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'etudiants' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Etudiant::class,
+        ],
+        'profs' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Prof::class,
         ],
 
         // 'users' => [

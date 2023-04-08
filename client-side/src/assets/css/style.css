@@ -1,0 +1,9 @@
+.bg{
+
+    background: #00c9b7 !important;
+    -webkit-box-shadow: 5px 9px 43px 1px rgba(0,0,0,0.18);
+    box-shadow: 5px 9px 43px 1px rgba(0,0,0,0.18);
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    }

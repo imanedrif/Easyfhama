@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('filliere');
             $table->string('classe');
             $table->string('password');
-            $table->foreignId('id_cours')->references('id')->on('cours');
+            // $table->foreignId('id_cours')->references('id')->on('cours');
             $table->rememberToken();
             $table->timestamps();
         });
