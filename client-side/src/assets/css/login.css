@@ -1,0 +1,137 @@
+.LoginPage{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh;
+    width: 100%;
+    background-color: #F8F8F8;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.fleche{
+    margin-top: 2rem;
+    size: 0.6rem;
+}
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+}
+.form-Container{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form-header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.form-header h1{
+    color: #2D316B;
+    font-size: 3rem;
+}
+.form-body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+input[type="text"], input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #C9CADD;
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 280px;
+    height: 40px;
+}
+@media screen and (min-width:1440px) {
+    input[type="text"], input[type="password"], input[type="email"]{
+        padding: 20px 25px;
+        width: 300px;
+        height: 60px;
+    }
+
+}
+span{
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #435673;
+}
+.form-btn{
+    display: flex;
+    gap: 1.2rem;
+}
+.check{
+    display: flex;
+    gap: 0.5rem;
+}
+.form-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.signup-text span{
+    font-size: 14px;
+    font-weight: 300;
+}
+.link{
+    color: #F8D162;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+.img-container{
+    flex: 0 0 40%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position : relative;
+}
+.img-container .SideBackground {
+    max-width: 70%;
+    /* object-fit: cover; */
+    height: auto;
+    animation : InfinitRotation 10s linear infinite;
+       
+}
+.img-container .SideImage{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+@keyframes InfinitRotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.login-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    min-height: 80vh;
+
+}
+form{
+    margin-left: 8rem;
+    /* border: 1px solid #C9CADD; */
+    border-radius: 10px;
+    padding: 40px;
+}
+

@@ -1,59 +1,45 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Navigate, Routes} from 'react-router-dom';
-// import MasterLayout from './layouts/admin/MasterLayout';
-import Register from './components/auth/register';
-import Login from './components/auth/login';
-// import AdminPrivateRoute from './AdminPrivateRoute';
-import PublicRoute from './assets/router/publicroute';
+import Home from './pages/home.jsx';
+import Login from './pages/login.jsx';
+import Register from './pages/register.jsx';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
 
-
-import axios from 'axios';
-
-
-axios.defaults.baseURL = "http://localhost:8000";
-axios.defaults.headers.post['Content-Type'] = 'application/json';
-axios.defaults.headers.post['Accept'] = 'application/json';
-
-
-axios.defaults.withCredentials = true;
-
-
-axios.interceptors.request.use(function (config){
-  const token = localStorage.getItem('auth_token');
-  config.headers.Authorization = token ? `Bearer ${token}` : '';
-  return config;
-});
 
 function App() {
+  const pages = [
+    // in case you've added a page , u just need to overwrite this array
+    {
+      name: 'Home',
+      path: '/',
+      component: Home
+    },
+    {
+      name: 'Login',
+      path: '/login',
+      component: Login
+    },
+    {
+      name: 'Register',
+      path: '/Register',
+      component: Register
+    }
+  ];
 
 
   return (
-    <div className="App">
-        <Router>
-     
-          <Routes>
-
-
-            {/* <AdminPrivateRoute path="/admin" name="Admin" /> */}
-           
-            <Route path="/" name="Home" />
-           
-             <Route path="/login">
-              {localStorage.getItem('auth_token') ? <Navigate to='/' /> : <Login />}
-            </Route>
-
-
-            <Route path="/register">
-              {localStorage.getItem('auth_token') ? <Navigate to='/' /> : <Register />}
-            </Route>
-
-
-            {/* <Route path="/admin" name="Admin" render={(props) => <MasterLayout {...props} />} /> */}
-
-
-          </Routes>
-        </Router>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {
+          pages.map((page, index) => {
+            return (
+              <Route key={index} path={page.path} element={<page.component />} />
+            )
+          }
+          )
+        }
+      </Routes>
+    </BrowserRouter>
   );
 }
 
