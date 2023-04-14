@@ -40,8 +40,8 @@ class AuthController extends Controller
         $user->password = bcrypt($input['password']);
         $user->save();
 
-        // $token = $user->createToken('myApp',['etudiant'])->plainTextToken;
-        return response()->json(['user'=>$user ]);
+        $token = $user->createToken('token_auth',['etudiant'])->plainTextToken;
+        return response()->json(['user'=>$user],200);
     }
 
     Public function login(Request $request){

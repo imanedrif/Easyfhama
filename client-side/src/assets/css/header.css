@@ -18,8 +18,18 @@
     width: fit-content;
     
 }
+@media screen and (min-width:1440px) {
+    .HeaderNav{
+        gap: 2.5rem;
+    }
+    .Header{
+        padding: 0 2.5rem;
+    }
+    .Header img{
+        height: 6rem;
+    }
 
-/* ?sf sf madrbnish */
+}
 .HeaderNav a{
     color: #242E30;
     text-decoration: none;

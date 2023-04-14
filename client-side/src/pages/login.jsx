@@ -8,11 +8,16 @@ import content from '../assets/images/content.svg'
 import Button from '@mui/material/Button';
 import Header from '../layouts/Header';
 import { PrimaryButton } from '../layouts/Buttons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 
 const Login = () => {
+
+    let navigate =useNavigate()
+
     const [loginInput,setLogininput]=useState(
         {
             email:'',
@@ -20,7 +25,6 @@ const Login = () => {
         }
     );
     const  handleInput = (e)=>{
-        e.persist()
         setLogininput({...loginInput,[e.target.name]:e.target.value})
     }
 
@@ -30,6 +34,33 @@ const Login = () => {
             email:loginInput.email,
             password:loginInput.password
         }
+        console.log(data)
+        axios.post('http://localhost:8000/api/login',data)
+        .then(res=>{
+            console.log(res.data)
+            if(res.status===200 && res.data.user.role==='etudiant'){
+                // toreuser data in local storage
+                // remove user data from local storage
+                // localStorage.removeItem('user')
+                localStorage.setItem('user',JSON.stringify(res.data.user))
+                console.log(JSON.parse(localStorage.getItem('user')))
+                navigate('/etudiant/dashboard')
+            }
+            if(res.status===200 && res.data.user.role==='admin'){
+                localStorage.setItem('user',JSON.stringify(res.data.user))
+                console.log(JSON.parse(localStorage.getItem('user')))
+                navigate('/admin/dashboard')
+            }
+        })
+        .catch(err=>{
+            if(err.response && err.response.status=== 401){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something is wrong!',
+                })  
+            }
+        })
     }
 
 
@@ -40,7 +71,7 @@ const Login = () => {
             <form onSubmit={handlesubmit}>
             <div className='form-Container'>
                 <div className='form-header'>
-                    <h1>S'inscrire</h1>
+                    <h1>Se connecter</h1>
                     <Button variant="outlined" startIcon={<GoogleIcon/>} className='btn-google'>Se connecter avec Google</Button>
                 </div>
                 <div className='form-body'>
@@ -48,14 +79,14 @@ const Login = () => {
                     <input type='password' name='password' value={loginInput.password} onChange={handleInput} placeholder='mot de passe'/>
                     <div className='form-btn'>
                         <span>Oublier mot de passe?</span>
-                    {/* <div className='check'>
+                    <div className='check'>
                     <input type="checkbox" name="staylogin" className='checkbox'/>
-                    <span>Souviens de moi</span> */}
-                    {/* </div> */}
+                    <span>Souviens de moi</span>
+                    </div>
                     </div>
                 </div>
                 <div className='form-footer'>
-                    <PrimaryButton text='Se connecter' path='/'/>
+                    <PrimaryButton text='Se connecter' onClick={handlesubmit}/>
                     <div className='signup-text'>
                     <span>Vous n'avez pas un compte ? <Link to='/register' className='link'>S'inscrire</Link></span>
                     </div>

@@ -18,18 +18,18 @@ class DefaultData extends Seeder
     {
         $data['nom'] = 'yassine';
         $data['email'] = 'yassine@gmail.com';
-        $data['password'] = bcrypt(123456);
+        $data['password'] = bcrypt(12345678);
 
         Admin::create($data);
 
-        $Edata['nom'] = 'imane';
-        $Edata['email'] = 'imane@gmail.com';
-        $Edata['filliere'] = 'science';
-        $Edata['classe'] = '2bac';
-        // $Edata['id_cours'] = random_int(2,3);
-        $Edata['password'] = bcrypt(123456);
+        // $Edata['nom'] = 'imane';
+        // $Edata['email'] = 'imane@gmail.com';
+        // $Edata['filliere'] = 'science';
+        // $Edata['classe'] = '2bac';
+        // // $Edata['id_cours'] = random_int(2,3);
+        // $Edata['password'] = bcrypt(12345678);
 
 
-        Etudiant::create($Edata);
+        // Etudiant::create($Edata);
     }
 }
