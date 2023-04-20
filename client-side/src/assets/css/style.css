@@ -7,6 +7,10 @@
     font-family: 'League Spartan', sans-serif;
     /* background-color: black */
 }
+html {
+  scroll-behavior: smooth;
+}
+
 /* import header css */
 @import url('./header.css');
 .PrimaryButton{
@@ -20,7 +24,18 @@
     line-height: 19px;
     color: #2D316B;
 }
-
+.SecondryButton{
+  background-color: #B1E2DC;
+  /* background: linear-gradient(189.9deg, #2D316B 19.57%, #B1E2DC 90.8%); */
+  border-radius: 26px;
+  padding: 10px 22px;
+  cursor:pointer;
+  border:none;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 19px;
+  color: #130f5f;
+}
 .dropdown {
     position: relative;
     display: inline-block;

@@ -1,0 +1,84 @@
+.appretissage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7rem;
+}
+.textA1{
+    /* font-family: 'Poppins', sans-serif; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+}
+.textA2{   
+    /* font-family: 'Poppins', sans-serif; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    color: rgba(150, 222, 213, 1);
+    margin-left: 5px;
+}
+.pourquoi_appretissage{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 6rem;
+}
+.case1{
+    width: 320px;
+    height: 350px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 60px rgba(38, 45, 118, 0.08);
+    border-radius: 20px;
+}
+.case2{
+    width: 320px;
+    height: 350px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 60px rgba(38, 45, 118, 0.08);
+    border-radius: 20px;
+}
+.case3{
+    width: 320px;
+    height: 350px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 60px rgba(38, 45, 118, 0.08);
+    border-radius: 20px;
+}
+.icons_cases{
+    width: 40%;
+    height: 38%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+}
+.titile_cases{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 23px;
+    color: #2D316B;
+    margin-top: -10px;
+}
+.text_cases{
+    text-align: center;
+    color: #696984;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.5px;
+    line-height: 200%;
+}
+.description-apprentissage{
+    margin-top: 1.5rem;
+    color: rgba(48, 53, 61, 0.5);
+    display: flex;
+    /* justify-content: center; */
+    font-style: normal;
+    font-weight: 300;
+    font-size: 29px;
+    line-height: 55px;
+    text-align: center;
+}

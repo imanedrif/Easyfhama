@@ -3,10 +3,12 @@ import Home from './pages/home.jsx';
 import Login from './pages/login.jsx';
 import Register from './pages/register.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+// import './App.css';
 import AdminDashboard from './pages/admin/dashboard.jsx';
 import EtudiantDashboard from './pages/etudiant/dashboard.jsx';
 import ProfDashboard from './pages/prof/dashboard.jsx';
+import Payment from './pages/payment.jsx';
+import Statistic from './pages/etudiant/statistic.jsx';
 
 
 function App() {
@@ -26,6 +28,11 @@ function App() {
       name: 'Register',
       path: '/register',
       component: Register
+    },
+    {
+      name: 'Payment',
+      path: '/payment',
+      component: Payment
     },
     {
       name:'Admin Dashboard',

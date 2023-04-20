@@ -83,15 +83,15 @@ const Register = () => {
                                         <MenuItem value=''>
                                             <em>choisir votre filliere</em>
                                         </MenuItem>
-                                        <MenuItem value={2}>Science physique</MenuItem>
-                                        <MenuItem value={3}>Science math</MenuItem>
-                                        <MenuItem value={3}>Science math A</MenuItem>
-                                        <MenuItem value={4}>Science math B</MenuItem>
-                                        <MenuItem value={5}>Sciences Expérimentales</MenuItem>
-                                        <MenuItem value={6}>Sciences économiques</MenuItem>
-                                        <MenuItem value={7}>Sciences et technologies mécaniques</MenuItem>
-                                        <MenuItem value={8}>Sciences et technologies électriques</MenuItem>
-                                        <MenuItem value={9}>Sciences Gestion Comptable</MenuItem>
+                                        <MenuItem value={"Science physique"}>Science physique</MenuItem>
+                                        <MenuItem value={"Science math"}>Science math</MenuItem>
+                                        <MenuItem value={"Science math A"}>Science math A</MenuItem>
+                                        <MenuItem value={"Science math B"}>Science math B</MenuItem>
+                                        <MenuItem value={"Sciences Expérimentales"}>Sciences Expérimentales</MenuItem>
+                                        <MenuItem value={"Sciences économiques"}>Sciences économiques</MenuItem>
+                                        <MenuItem value={"Sciences et technologies mécaniques"}>Sciences et technologies mécaniques</MenuItem>
+                                        <MenuItem value={"Sciences et technologies électriques"}>Sciences et technologies électriques</MenuItem>
+                                        <MenuItem value={"Sciences Gestion Comptable"}>Sciences Gestion Comptable</MenuItem>
                                     </Select>
                                 </FormControl>
                                 <FormControl variant="standard" sx={{ m: 2, minWidth: 120 }}>
@@ -104,9 +104,9 @@ const Register = () => {
                                         <MenuItem value=''>
                                             <em>choisir votre classe</em>
                                         </MenuItem>
-                                        <MenuItem value={2}>Tronc commun</MenuItem>
-                                        <MenuItem value={3}>1ère BAC </MenuItem>
-                                        <MenuItem value={4}>2ème BAC</MenuItem>
+                                        <MenuItem value={"Tronc commun"}>Tronc commun</MenuItem>
+                                        <MenuItem value={"1ère BAC"}>1ère BAC </MenuItem>
+                                        <MenuItem value={"2ème BAC"}>2ème BAC</MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>

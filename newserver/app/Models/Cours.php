@@ -19,13 +19,15 @@ class Cours extends Model
         return $this->belongsTo(Prof::class, 'id_prof', 'id');
     }
 
-    public function Etudiant(): BelongsToMany
-    {
-        return $this->belongsToMany(Etudiant::class);
-    }
-
     public function classe(): BelongsTo
     {
         return $this->belongsTo(Classe::class, 'id_classe', 'id');
+    }
+
+    public function etudiants(): BelongsToMany
+    {
+        return $this->belongsToMany(Etudiant::class, 'id_prof', 'id', 'id_etudiant')
+            ->withPivot('status')
+            ->withTimestamps();
     }
 }

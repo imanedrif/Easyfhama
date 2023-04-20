@@ -29,13 +29,20 @@ class Etudiant extends Authenticatable
         'remember_token',
     ];
 
-    public function Etudiantcours(): belongsToMany
-    {
-        return $this->BelongsToMany(Cours::class, 'id_prof', 'id');
-    }
+    // public function Etudiantcours(): belongsToMany
+    // {
+    //     return $this->BelongsToMany(Cours::class, 'id_prof', 'id');
+    // }
 
     public function prof(): HasMany
     {
         return $this->hasMany(Prof::class, 'id_prof', 'id');
+    }
+
+    public function cours(): BelongsToMany
+    {
+        return $this->belongsToMany(Cours::class, 'id_prof', 'id', 'id_courss')
+            ->withPivot('status')
+            ->withTimestamps();
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Etudiantcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', [AuthController::class,'login']);
 Route::post('register', [AuthController::class,'register']);
 // Route::post('login/etudiant', [AuthController::class,'login']);
+
+Route::prefix('etudiants')->group(function () {
+    Route::get('/', 'Etudiantcontroller@index'); // Get all etudiants
+    Route::get('/{id}', [Etudiantcontroller::class , 'show']); // Get a specific etudiant by ID
+    Route::patch('/{id}', [Etudiantcontroller::class ,'update' ]); // Update a specific etudiant by ID
+    // Route::post('/{id}/applyForCours', 'Etudiantcontroller@applyForCours'); // Apply for a course for a specific etudiant by ID
+});
 

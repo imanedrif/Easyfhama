@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('filliere');
+            $table->integer('limit');
             $table->foreignId('id_edudiant')->references('id')->on('etudiants');
             $table->foreignId('id_prof')->references('id')->on('profs');
             $table->foreignId('id_cours')->references('id')->on('cours');

@@ -1,0 +1,44 @@
+.part_comment{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 130px;
+}
+.slick-slide > div {
+    margin: 0 10px;
+}
+.slick-list {
+    margin: 0 -10px;
+}
+.comment{
+    background-color: #efefef44;
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+.img_student{
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card{
+    border: 1px solid white ;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 50px;
+}
+.card_top h1{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.card_bottom p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    line-height: 25px;
+    font-size: 18px;
+}

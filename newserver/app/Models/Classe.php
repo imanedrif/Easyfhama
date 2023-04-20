@@ -11,6 +11,7 @@ class Classe extends Model
     protected $fillable=[
         'nom',
         'filliere',
+        "limit",
         // 'id_edudiant',
         // 'id_prof',
         // 'id_cours',

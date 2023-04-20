@@ -28,6 +28,7 @@ const Login = () => {
         setLogininput({...loginInput,[e.target.name]:e.target.value})
     }
 
+
     const handlesubmit = (e)=>{
         e.preventDefault()
         const data ={
@@ -72,7 +73,14 @@ const Login = () => {
             <div className='form-Container'>
                 <div className='form-header'>
                     <h1>Se connecter</h1>
-                    <Button variant="outlined" startIcon={<GoogleIcon/>} className='btn-google'>Se connecter avec Google</Button>
+                    <Button 
+                    variant="outlined" 
+                    startIcon={<GoogleIcon/>} 
+                    className='btn-google'
+                    // onClick={handleGoogleLogin}
+                    >
+                    Se connecter avec Google
+                    </Button>
                 </div>
                 <div className='form-body'>
                     <input type='email' name='email' value={loginInput.email} onChange={handleInput} placeholder='Nom@gmail.com'/>

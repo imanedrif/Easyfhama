@@ -6,12 +6,12 @@ export const PrimaryButton = (props) => {
     var path = props.path;
   return (
     <button className="PrimaryButton"
-        {...props}
-        onClick={() => {
-            if (path) {
-                window.open(path, "_self");
-            }
-        }}
+    onClick={() => {
+        if (path) {
+            window.open(path, "_self");
+        }
+    }}
+    {...props}
     >
         {props.text}
     </button>
@@ -19,11 +19,19 @@ export const PrimaryButton = (props) => {
 }
 
 export const SecondryButton = (props) => {
+    var path = props.path;
     return (
-      <button className="SecondaryButton">
-          {props.children}
-      </button>
-    )
+        <button className="SecondryButton"
+        onClick={() => {
+            if (path) {
+                window.open(path, "_self");
+            }
+        }}
+        {...props}
+        >
+            {props.text}
+        </button>
+      )
 }
 
 export const DropdownsButton = (props) => {
@@ -33,7 +41,7 @@ export const DropdownsButton = (props) => {
     
     const handleMenu = (e) =>{
         if(e === "parametre"){
-            window.location.href = "/parametre"
+            window.location.href = "/etudiant/dashboard"
         }
         else if(e === "sedeconnecter"){
             localStorage.removeItem('user')
