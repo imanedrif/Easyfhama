@@ -1,0 +1,70 @@
+.searchcours{
+    width: 35%;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #282938;
+  }
+  .courses ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  .courses li{
+    padding: 20px ;
+    color: #282938;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 19px; 
+  }
+  .courses ul li:first-child{
+    color:  rgba(116, 229, 216, 1);
+    text-decoration: underline;
+  }
+  .cours1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .cours2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .border_cours{
+    background: #FFFFFF;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid rgb(240, 240, 240);
+    width: 330px;
+    height: 350px;
+    padding: 30px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .border_cours .img_cours{
+    width: 100%;
+    height: fit-content;
+  }
+  h1{
+    color: #282938;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px; 
+    margin-left: 10px;
+  }
+  .decription_cours{
+    color: #282938;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    margin-left: 10px;
+  }
+  

@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './images/logo.svg';
 import logo from '../assets/images/logo.svg';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link } from 'react-router-dom';

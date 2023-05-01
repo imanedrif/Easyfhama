@@ -9,8 +9,6 @@ const Informations = () => {
     nom: JSON.parse(localStorage.getItem("user")).nom,
     id: JSON.parse(localStorage.getItem("user")).id,
     email: JSON.parse(localStorage.getItem("user")).email,
-    filliere: JSON.parse(localStorage.getItem("user")).filliere,
-    classe: JSON.parse(localStorage.getItem("user")).classe,
     password: ''
   });
 
@@ -27,8 +25,6 @@ const Informations = () => {
     const updatedFormData = new FormData();
     updatedFormData.append('nom', formData.nom);
     updatedFormData.append('email', formData.email);
-    updatedFormData.append('filliere', formData.filliere);
-    updatedFormData.append('classe', formData.classe);
     updatedFormData.append('password', formData.password);
 
     axios.put(`http://localhost:8000/api/etudiants/${formData.id}`,updatedFormData)
@@ -66,8 +62,6 @@ const Informations = () => {
           <label className="mes_info">Mes informations</label><br />
           <input className="input_info" type="text" value={formData.nom} onChange={handleInputChange}/> <br />
           <input className="input_info" type="text" value={formData.email} onChange={handleInputChange}/><br />
-          <input className="input_info" type="text" value={formData.filliere} onChange={handleInputChange}/>
-          <input className="input_info" type="text" value={formData.classe} onChange={handleInputChange}/>
           <input className="input_info" type="password" placeholder="*********"  onChange={handleInputChange}/><br />
           <PrimaryButton text="Enregistrer" onClick={(e)=>{handleSubmit(e)}}/>
         </div>

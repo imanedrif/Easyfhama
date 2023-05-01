@@ -36,12 +36,21 @@ export const SecondryButton = (props) => {
 
 export const DropdownsButton = (props) => {
 
-    
+    let user = localStorage.getItem('user') 
     const [isOpen,setIsopen] = useState(false)
     
     const handleMenu = (e) =>{
         if(e === "parametre"){
-            window.location.href = "/etudiant/dashboard"
+            console.log(JSON.parse(user).role)
+            if(JSON.parse(user).role === 'etudiant'){
+                window.location.href = "/Etudiant/dashboard"
+            }
+            else if(JSON.parse(user).role === 'admin'){
+                window.location.href = "admin/dashboard"
+            }
+            else if(JSON.parse(user).role === 'prof'){
+                window.location.href = "prof/dashboard"
+            }
         }
         else if(e === "sedeconnecter"){
             localStorage.removeItem('user')

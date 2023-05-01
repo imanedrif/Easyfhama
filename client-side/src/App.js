@@ -9,6 +9,7 @@ import EtudiantDashboard from './pages/etudiant/dashboard.jsx';
 import ProfDashboard from './pages/prof/dashboard.jsx';
 import Payment from './pages/payment.jsx';
 import Statistic from './pages/etudiant/statistic.jsx';
+import Cours from './pages/cours.jsx';
 
 
 function App() {
@@ -35,6 +36,11 @@ function App() {
       component: Payment
     },
     {
+      name: 'Cours',
+      path: '/cours',
+      component: Cours
+    },
+    {
       name:'Admin Dashboard',
       path:'/admin/dashboard',
       component:AdminDashboard
@@ -46,7 +52,7 @@ function App() {
     },
     {
       name:'Prof Dashboard',
-      path:'/Prof/dashboard',
+      path:'/prof/dashboard',
       component:ProfDashboard
     }
   ];

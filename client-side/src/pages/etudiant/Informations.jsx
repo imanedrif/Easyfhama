@@ -83,11 +83,11 @@ const Informations = () => {
       <div>
         <div className="justify_information">
           <label className="mes_info">Mes informations</label><br />
-          <input className="input_info" type="text" value={nom} onChange={(e)=>setNom(e.target.value)}/> <br />
-          <input className="input_info" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/><br />
+          <input className="input_info" type="text" value={nom} onChange={(e)=>setNom(e.target.value)}/>
+          <input className="input_info" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
           <input className="input_info" type="text" value={filliere} onChange={(e)=>setFilliere(e.target.value)}/>
           <input className="input_info" type="text" value={classe} onChange={(e)=>setClasse(e.target.value)}/>
-          <input className="input_info" type="password" placeholder="*********"  onChange={(e)=>setPassword(e.target.value)}/><br />
+          <input className="input_info" type="password" placeholder="*********"  onChange={(e)=>setPassword(e.target.value)}/>
           <PrimaryButton text="Enregistrer" onClick={(e)=>{handleSubmit(e)}}/>
         </div>
       </div>
