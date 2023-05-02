@@ -26,9 +26,11 @@ Route::post('register', [AuthController::class,'register']);
 // Route::post('login/etudiant', [AuthController::class,'login']);
 
 Route::prefix('etudiants')->group(function () {
-    Route::get('/', 'Etudiantcontroller@index'); // Get all etudiants
+    Route::get('/', [Etudiantcontroller::class , 'index']);
+    Route::post('/add-etudiant', [Etudiantcontroller::class , 'store']);
     Route::get('/{id}', [Etudiantcontroller::class , 'show']); // Get a specific etudiant by ID
-    Route::patch('/{id}', [Etudiantcontroller::class ,'update' ]); // Update a specific etudiant by ID
+    Route::patch('/update-etudiant/{id}', [Etudiantcontroller::class ,'update' ]); // Update a specific etudiant by ID
+    Route::delete('/delete-etudiant/{id}', [Etudiantcontroller::class ,'destroy' ]);
     // Route::post('/{id}/applyForCours', 'Etudiantcontroller@applyForCours'); // Apply for a course for a specific etudiant by ID
 });
 

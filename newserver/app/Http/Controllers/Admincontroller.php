@@ -9,7 +9,7 @@ class AdminController extends Controller
     public function getEtudiants()
     {
         $etudiants = Etudiant::all();
-        return response()->json(['etudiants' => $etudiants]);
+        return response()->json(['etudiants' => $etudiants],200);
     }
 
     public function getProfs()
@@ -38,7 +38,7 @@ class AdminController extends Controller
         $etudiant->password = bcrypt($input['password']);
         $etudiant->save();
 
-        return response()->json(['etudiant' => $etudiant]);
+        return response()->json(['etudiant' => $etudiant],200);
     }
 
     public function deleteEtudiant($id)

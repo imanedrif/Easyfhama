@@ -1,0 +1,30 @@
+.dashboard-header{
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+    align-items: center;
+}
+TableCell input {
+    background-color: aqua;
+} 
+/* .etudiant-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.etudiant-table th,
+.etudiant-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.etudiant-table th {
+  background-color: #f2f2f2;
+}
+
+.etudiant-table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.etudiant-table tr:last-child td {
+  border-bottom: none;
+} */

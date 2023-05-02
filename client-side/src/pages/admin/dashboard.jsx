@@ -47,8 +47,7 @@ const AdminDashboard = () => {
             <div className='dashboard_route'>
               <div className='dashboard-head'>
                 <img className='cour_img' src={userpic} />
-                <p className='text_dash'>Science physique</p>
-                <p className='niveau'>1er bac</p>
+                <p className='text_dash'>Admin</p>
               </div>
               <div>
                 <ul className="list_route">
@@ -88,9 +87,6 @@ const AdminDashboard = () => {
         </div>
     </div>
   )}
-  else{
-    window.location.href="/"
-  }
 }
 
 export default AdminDashboard

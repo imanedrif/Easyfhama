@@ -10,6 +10,8 @@ import ProfDashboard from './pages/prof/dashboard.jsx';
 import Payment from './pages/payment.jsx';
 import Statistic from './pages/etudiant/statistic.jsx';
 import Cours from './pages/cours.jsx';
+import Packs from './components/packs/Packs.js';
+import Nous from './components/aboutus/Nous.js';
 
 
 function App() {
@@ -34,6 +36,16 @@ function App() {
       name: 'Payment',
       path: '/payment',
       component: Payment
+    },
+    {
+      name: 'pack',
+      path: '/pack',
+      component: Packs
+    },
+    {
+      name: 'about',
+      path: '/about',
+      component: Nous
     },
     {
       name: 'Cours',
